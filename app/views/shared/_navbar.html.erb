@@ -1,0 +1,57 @@
+ <div class="uk-navbar-container" uk-sticky>
+        <div class="uk-container uk-container-expand">
+            <div class="uk-navbar">
+            
+                <div class="uk-navbar-left">
+                    <div class="uk-navbar-item">
+                        SITE TITLE
+                    </div>
+                </div>
+            
+                <div class="uk-navbar-right">
+                    <ul class="uk-navbar-nav">
+                        <li class="uk-active"><a href="">MENU1</a></li>
+                        <li class="uk-parent"><a href="">MENU2</a></li>
+                        <li><a href="">MENU3</a></li>
+                    </ul>
+                    <a class="uk-navbar-toggle" uk-navbar-toggle-icon href="#offcanvas" uk-toggle></a>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+    
+    <div class="uk-container uk-container-expand uk-visible@m">
+        <ul class="uk-breadcrumb">
+            <li><a href="">Home</a></li>
+            <li><a href="">Menu1</a></li>
+            <li><a href="">Menu2</a></li>
+            <li><span href="">Contents</span></li>
+        </ul>
+    </div>
+
+
+
+
+<div id="offcanvas" uk-offcanvas="flip: true; overlay: false; mode: slide;">
+    <div class="uk-offcanvas-bar">
+        <button class="uk-offcanvas-close" type="button" uk-close></button>
+
+        <ul class="uk-nav uk-nav-default">
+            <li class="uk-active"><a href="#">Active</a></li>
+            <li class="uk-parent">
+                <a href="#">Parent</a>
+                <ul class="uk-nav-sub">
+                    <li><a href="#">Sub item</a></li>
+                    <li><a href="#">Sub item</a></li>
+                </ul>
+            </li>
+            <li class="uk-nav-header">Header</li>
+            <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: table"></span> Item</a></li>
+            <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: thumbnails"></span> Item</a></li>
+            <li class="uk-nav-divider"></li>
+            <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: trash"></span> Item</a></li>
+        </ul>
+
+    </div>
+</div><!--/div#offcanvas-->

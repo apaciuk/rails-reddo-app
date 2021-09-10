@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= [5, *ENV.values_at("RAILS_MAX_THREADS", "SIDEKIQ_CONCURRENCY")].map(&:to_i).max %>
+  user: anton
+  password: postgres1
+
+development:
+  <<: *default
+  database: reddo_app_development
+
+test:
+  <<: *default
+  database: reddo_app_test
+
+production:
+  <<: *default
+  url: <%= ENV["DATABASE_URL"] %>
