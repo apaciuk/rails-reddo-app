@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 2021_09_11_123309) do
     t.string "name"
     t.string "url"
     t.text "bio"
+    t.text "rules"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

@@ -13,35 +13,6 @@
   </div>
 </div>
 
-<div class="table-responsive">
-  <table class="table table-striped table-bordered table-hover">
-    <thead>
-      <tr>
-    
-        <th>Name</th>
-    
-
-            <th>Url</th>
-            <th>Bio</th>
-            <th>User</th>
-            
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @communities.each do |community| %>
-        <%= content_tag :tr, id: dom_id(community), class: dom_class(community) do %>
-          
-            <td><%= link_to community.name, community %></td>
-          
-
-                      <td><%= community.url %></td>
-                      <td><%= community.bio %></td>
-                      <td><%= community.user %></td>
-          
-          
-        <% end %>
-      <% end %>
-    </tbody>
-  </table>
+<div class="row">
+ <%= render @communities %>
 </div>
