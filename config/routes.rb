@@ -9,7 +9,7 @@ authenticate :user, lambda { |u| u.admin? } do
   namespace :madmin do
   end
 end
-
+  resources :communities
   resources :notifications, only: [:index]
   resources :announcements, only: [:index]
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
