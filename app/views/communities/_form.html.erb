@@ -1,0 +1,47 @@
+<%= form_with(model: community, local: true) do |form| %>
+  <% if community.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(community.errors.count, "error") %> prohibited this community from being saved:</h2>
+       <ul>
+      <% community.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="mb-3">
+    <%= form.label :name, class: 'form-label' %>
+      <%= form.text_field :name, class: 'form-control' %>
+    </div>
+
+  <div class="mb-3">
+    <%= form.label :url, class: 'form-label' %>
+      <%= form.text_field :url, class: 'form-control' %>
+    </div>
+
+  <div class="mb-3">
+    <%= form.label :bio, class: 'form-label' %>
+      <%= form.text_area :bio, class: 'form-control' %>
+    </div>
+
+  <div class="mb-3">
+    <%= form.label :user_id, class: 'form-label' %>
+      <%= form.text_field :user_id, class: 'form-control' %>
+    </div>
+
+  <div class="mb-3">
+    <% if community.persisted? %>
+      <div class="float-end">
+        <%= link_to 'Destroy', community, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+
+    <%= form.submit class: 'btn btn-primary' %>
+
+    <% if community.persisted? %>
+      <%= link_to "Cancel", community, class: "btn btn-link" %>
+    <% else %>
+      <%= link_to "Cancel", communities_path, class: "btn btn-link" %>
+    <% end %>
+  </div>
+<% end %>

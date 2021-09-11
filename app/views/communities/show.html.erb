@@ -1,0 +1,20 @@
+<div class="page-header">
+  <%= link_to communities_path, class: 'btn btn-default' do %>
+    All Communities
+  <% end %>
+  <%= link_to edit_community_path(@community), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Show community</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Name:</dt>
+  <dd><%= @community.name %></dd>
+  <dt>Url:</dt>
+  <dd><%= @community.url %></dd>
+  <dt>Bio:</dt>
+  <dd><%= @community.bio %></dd>
+  <dt>User:</dt>
+  <dd><%= @community.user %></dd>
+</dl>
