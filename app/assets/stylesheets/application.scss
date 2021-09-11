@@ -1,6 +1,28 @@
-//= require_tree .
-//= require_self
+// $navbar-default-bg: #312312;
+// $light-orange: #ff8c00;
+// $navbar-default-color: $light-orange;
 
-section{
-    background: #C5CAE9;
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "bootstrap";
+@import "jumpstart/announcements";
+
+// Fixes bootstrap nav-brand container overlap
+@include media-breakpoint-down(xs) {
+  .container {
+    margin-left: 0;
+    margin-right: 0;
   }
+}
+
+// Masquerade alert shouldn't have a bottom margin
+body > .alert {
+  margin-bottom: 0;
+}
+.navbar-dark {
+  background-color: #FF5700!important;
+}
+.navbar-dark li a {
+color: whitesmoke!important;
+}
+

@@ -2,6 +2,5 @@
 
 require_relative "config/environment"
 
-use Rack::CanonicalHost, ENV["RAILS_HOSTNAME"] if ENV["RAILS_HOSTNAME"].present?
 run Rails.application
 Rails.application.load_server

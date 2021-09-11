@@ -1,5 +1,10 @@
-# Renders the home page.
 class HomeController < ApplicationController
   def index
+  end
+
+  def terms
+  end
+
+  def privacy
   end
 end

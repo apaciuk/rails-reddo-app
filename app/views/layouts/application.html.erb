@@ -1,9 +1,19 @@
-<%# The "application" layout is the default layout. It extends "base"  %>
-<%# to include things like header, footer, and alerts that are common  %>
-<%# to most (but not all) views.                                       %>
+<!DOCTYPE html>
+<html class="h-100">
+  <head>
+    <%= render 'shared/head' %>
+  </head>
 
-<%= render("shared/flash") %>
+  <body class="d-flex flex-column h-100">
+    <main class="flex-shrink-0"> 
+      <%= render 'shared/navbar' %>
+      <%= render 'shared/notices' %>
 
-<%= yield %>
+      <div class="container mt-4 mx-auto">
+        <%= yield %>
+      </div>
+    </main>
 
-<% parent_layout "base" %>
+    <%= render 'shared/footer' %>
+  </body>
+</html>
