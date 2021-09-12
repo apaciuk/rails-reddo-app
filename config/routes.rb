@@ -1,10 +1,7 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
-  get 'post/index'
-  get 'post/show'
-  get 'post/create'
-  get 'post/destroy'
+  resources :posts
   resources :communities
   get '/privacy', to: 'home#privacy'
   get '/terms', to: 'home#terms'
