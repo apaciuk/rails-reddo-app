@@ -23,17 +23,13 @@ class CommunitiesController < ApplicationController
 
   # POST /communities or /communities.json
   def create
-    @community = Community.new(community_params)
-
-    respond_to do |format|
+    @community = Community.new(community_values)
+    @community.user_id = current_user.id
       if @community.save
-        format.html { redirect_to @community, notice: "Community was successfully created." }
-        format.json { render :show, status: :created, location: @community }
+       redirect_to communities_path
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @community.errors, status: :unprocessable_entity }
+      render :new
       end
-    end
   end
 
   # PATCH/PUT /communities/1 or /communities/1.json
@@ -65,7 +61,7 @@ class CommunitiesController < ApplicationController
     end
 
     # Only allow a list of trusted parameters through.
-    def community_params
-      params.require(:community).permit(:name, :url, :bio)
+    def community_values
+      params.require(:community).permit(:name, :url, :rules)
     end
 end
