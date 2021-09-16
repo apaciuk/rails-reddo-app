@@ -9,7 +9,7 @@ authenticate :user, lambda { |u| u.admin? } do
   namespace :madmin do
   end
 end
-
+  resources :home
   resources :notifications, only: [:index]
   resources :announcements, only: [:index]
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
@@ -17,6 +17,6 @@ end
     resources :posts
   end
 
-  root to: 'home#index'
+  root to: 'communities#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
