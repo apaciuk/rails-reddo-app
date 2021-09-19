@@ -10,7 +10,7 @@ class HomeController < ApplicationController
 
   # GET /communities or /communities.json
   def index
-    @communities = Community.all
+    @communities = Community.all.limit(5)
 
   end
 
